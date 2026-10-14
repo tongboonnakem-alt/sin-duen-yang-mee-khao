@@ -1,0 +1,13 @@
+{
+  "name": "sin-duen-yang-mee-khao",
+  "version": "1.0.0",
+  "private": true,
+  "description": "เว็บรีวิวและสุ่มร้านอาหารรอบมหาวิทยาลัยตามงบประมาณ",
+  "type": "module",
+  "engines": { "node": ">=24.0.0" },
+  "scripts": {
+    "dev": "node --watch server/index.js",
+    "start": "node server/index.js",
+    "test": "node --test test/*.test.js"
+  }
+}
