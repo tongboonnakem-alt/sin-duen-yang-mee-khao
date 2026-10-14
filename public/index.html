@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="สมุดร้านอร่อยสำหรับนักศึกษา เลือกเมนูตามงบ เก็บรีวิว และสุ่มร้านสำหรับมื้อต่อไป">
+  <title>สิ้นเดือนยังมีข้าว · อิ่มได้ในงบเรา</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="header"><a class="brand" href="/" aria-label="สิ้นเดือนยังมีข้าว หน้าแรก"><span class="brand-icon">🍚</span><span>สิ้นเดือนยังมีข้าว<small>GOOD FOOD. STUDENT BUDGET.</small></span></a><nav aria-label="เมนูหลัก"><a href="#restaurants">สมุดร้านอร่อย</a><button class="button dark small" id="add-top">＋ เพิ่มร้านของฉัน</button></nav></header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow"><span class="dot"></span> เพื่อนคู่มื้อ ของชาวมหาลัย</p><h1 id="hero-title">งบน้อยได้<br>แต่ต้อง<span class="orange">อิ่มอร่อย.</span></h1><p class="intro">รวมร้านโปรดรอบรั้วมหาลัย รีวิวจากมื้อที่เคยกิน<br class="desktop"> แล้วให้เราช่วยเลือกมื้อถัดไป ในงบที่เธอสบายใจ</p><div class="hero-pills"><span>✦ เลือกตามงบ</span><span>☆ เก็บรีวิว</span><span>⚄ สุ่มร้านอร่อย</span></div></div>
+      <div class="hero-art" aria-hidden="true"><span class="art-note">มื้อนี้…กินอะไรดี?</span><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="plate"><div class="rice"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="greens"><b></b><b></b><b></b><b></b></div><div class="egg"><div></div></div><div class="chilli"></div></div><div class="price-sticker">อิ่มได้<br><strong>ในงบเรา!</strong></div><span class="spark spark-one">✳</span><span class="spark spark-two">✦</span><div class="art-caption">กินให้อิ่ม แล้วไปใช้ชีวิตกัน :)</div></div>
+    </section>
+    <section class="budget-panel" aria-labelledby="budget-title"><div><p class="eyebrow">LET'S PICK YOUR NEXT MEAL</p><h2 id="budget-title">มื้อนี้ มีงบเท่าไหร่?</h2><p>สุ่มจากราคาเมนูแนะนำ ไม่เกินงบที่ตั้งไว้</p></div><div class="budget-controls"><label class="budget-input"><span>งบต่อมื้อ</span><input id="budget" type="number" min="0" max="10000" step="0.01" value="50" aria-label="งบต่อมื้อ"><strong>บาท</strong></label><div class="quick-budgets" aria-label="เลือกงบอย่างรวดเร็ว"><button data-budget="35">35 ฿</button><button data-budget="50" class="active" aria-pressed="true">50 ฿</button><button data-budget="80">80 ฿</button><button data-budget="100">100 ฿</button></div></div><button id="random-button" class="button orange-bg random-button"><span>⚄</span> วันนี้ฝากท้องที่ไหน?</button></section>
+    <p id="budget-error" class="error" role="alert"></p>
+    <section id="random-result" class="random-result" aria-live="polite" hidden></section>
+    <section class="directory" id="restaurants" aria-labelledby="list-title"><div class="section-heading"><div><p class="eyebrow">THE LITTLE FOOD BOOK</p><h2 id="list-title">สมุดร้านอร่อย <span id="count" class="count">…</span></h2><p>ร้านที่อยากกลับไปกิน ในราคาที่อยากบอกต่อ</p></div><div class="legend"><span class="dot"></span> คะแนนคือรีวิวส่วนตัวของคุณ</div></div>
+      <div class="toolbar"><div class="category-tabs" id="categories" aria-label="กรองประเภทอาหาร"></div><label class="search"><span aria-hidden="true">⌕</span><input id="search" placeholder="ค้นหาร้าน เมนู หรือจุดที่ตั้ง" maxlength="100" aria-label="ค้นหาร้าน เมนู หรือจุดที่ตั้ง"></label></div>
+      <div class="list-meta"><span id="filter-summary" aria-live="polite">กำลังโหลดร้านอร่อย…</span><button id="reset-filters" class="text-button">ดูทุกร้าน / ล้างตัวกรอง</button></div>
+      <div id="cards" class="cards" aria-live="polite"></div>
+      <div class="demo-note"><span aria-hidden="true">ⓘ</span><p><strong>เริ่มต้นด้วยร้านสาธิต 8 ร้าน</strong> ชื่อร้าน ตำแหน่ง ราคา และรีวิวที่ติดป้าย “สาธิต” เป็นข้อมูลสมมติสำหรับทดลองระบบ เพิ่มร้านจริงของคุณได้จากปุ่มด้านบน</p></div>
+    </section>
+  </main>
+  <footer><a class="footer-brand" href="/">🍚 สิ้นเดือนยังมีข้าว</a><p>อิ่มท้อง สบายกระเป๋า แล้วไปต่อกับชีวิตมหาลัย</p><span>Mini Project #2 · สมุดรีวิวส่วนตัว</span></footer>
+  <dialog id="editor" aria-labelledby="editor-title"><form id="restaurant-form"><div class="dialog-heading"><div><p class="eyebrow">YOUR FOOD MEMORY</p><h2 id="editor-title">เพิ่มร้านอร่อย</h2></div><button type="button" class="close-button" id="close-editor" aria-label="ปิดแบบฟอร์ม">×</button></div><p class="form-intro">หนึ่งร้าน หนึ่งเมนูแนะนำ และรีวิวจากมื้อของคุณ</p><input type="hidden" name="id"><div class="form-grid"><label>ชื่อร้าน <span>*</span><input name="name" required maxlength="100" placeholder="เช่น ครัวข้างคณะ"></label><label>ประเภทอาหาร <span>*</span><select name="category" required id="category-select"></select></label><label class="full">ร้านอยู่ตรงไหน <span>*</span><input name="location" required maxlength="200" placeholder="เช่น ประตูหลังมหาลัย ตรงข้ามร้านถ่ายเอกสาร"></label><label>เมนูแนะนำ <span>*</span><input name="menu" required maxlength="100" placeholder="เช่น ข้าวกะเพราไก่"></label><label>ราคาเมนู (บาท) <span>*</span><input name="price" type="number" required min="0.01" max="10000" step="0.01" placeholder="45"></label><fieldset class="full rating-field"><legend>คะแนนของคุณ <span>*</span></legend><div class="rating-options" id="rating-options"></div></fieldset><label class="full">รีวิว / ความคิดเห็น<textarea name="review" maxlength="1000" rows="3" placeholder="รสชาติเป็นยังไง อิ่มไหม มีอะไรอยากบอกต่อ…"></textarea></label></div><p id="form-error" class="error" role="alert"></p><div class="form-actions"><button type="button" class="button secondary" id="cancel-editor">ยกเลิก</button><button type="submit" id="save-button" class="button dark">บันทึกร้านอร่อย</button></div></form></dialog>
+  <dialog id="delete-dialog" aria-labelledby="delete-title"><h2 id="delete-title">ลบร้านนี้จากสมุด?</h2><p id="delete-description"></p><p>ข้อมูลร้านและรีวิวนี้จะถูกลบออกจากฐานข้อมูล</p><p id="delete-error" class="error" role="alert"></p><div class="form-actions"><button id="cancel-delete" class="button secondary">เก็บไว้ก่อน</button><button id="confirm-delete" class="button danger">ลบร้าน</button></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>
